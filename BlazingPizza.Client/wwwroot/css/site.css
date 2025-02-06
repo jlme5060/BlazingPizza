@@ -56,6 +56,7 @@ form {
     overflow-y: auto;
     background: linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 80%);
     padding: 1.5rem !important;
+    text-align: center;
 }
 
 .nav-tab {
@@ -743,17 +744,69 @@ input[type=range] {
         right: 0.75rem;
         top: 0.5rem;
     }
+.history-image {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
+}
 
-@keyframes progressbar-slide {
-    0% {
-        transform: translateX(-200px);
+.team-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+.team-member {
+    text-align: center;
+    background:gray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+}
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid #d84315;
+    }
+h1, h2 {
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+p {
+    color: black;
+    text-align: center;
+}
+.texto {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+
+    @keyframes progressbar-slide {
+        0% {
+            transform: translateX(-200px);
+        }
+
+        70% {
+            transform: translateX(500px);
+        }
+
+        100% {
+            transform: translateX(500px);
+        }
     }
 
-    70% {
-        transform: translateX(500px);
-    }
-
-    100% {
-        transform: translateX(500px);
-    }
+body.daltonic .top-bar {
+    background: gray !important;
+}
+body.daltonic .content {
+    background: white !important;
 }

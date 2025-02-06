@@ -1,8 +1,8 @@
 ﻿@page "/"
 @inject HttpClient HttpClient
+@inject IJSRuntime JS
 @inject OrderState OrderState
 @inject NavigationManager NavigationManager
-@inject IJSRuntime JS
 
 <div class="main">
     <ul class="pizza-cards">
@@ -49,15 +49,15 @@
 </div>
 
 <TemplatedDialog Show="OrderState.ShowingConfigureDialog">
-    <ConfigurePizzaDialog
-        Pizza="OrderState.ConfiguringPizza"
-        OnCancel="OrderState.CancelConfigurePizzaDialog"
-        OnConfirm="OrderState.ConfirmConfigurePizzaDialog" />
+    <ConfigurePizzaDialog Pizza="OrderState.ConfiguringPizza"
+                          OnCancel="OrderState.CancelConfigurePizzaDialog"
+                          OnConfirm="OrderState.ConfirmConfigurePizzaDialog" />
 </TemplatedDialog>
 
 @code {
     List<PizzaSpecial>? specials;
     Order Order => OrderState.Order;
+    bool isDaltonicMode = false; // Controlador para el modo daltonico
 
     protected override async Task OnInitializedAsync()
     {
@@ -71,4 +71,4 @@
             OrderState.RemoveConfiguredPizza(configuredPizza);
         }
     }
-}
+}  
