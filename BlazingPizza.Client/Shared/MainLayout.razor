@@ -1,12 +1,14 @@
-﻿@inherits LayoutComponentBase
+@inherits LayoutComponentBase
 @inject IJSRuntime JS
+
 <div class="top-bar">
     <a class="logo" href="">
         <img src="img/logo.svg" />
     </a>
     <a class="logo" href="/sobre_nosotros">
-        <img src="img/sobre_nosotros.png" />
+        <img src="img/sobre_nostros.png" />
     </a>
+    
     <NavLink href="" class="nav-tab" Match="NavLinkMatch.All">
         <img src="img/pizza-slice.svg" />
         <div>Get Pizza</div>
@@ -20,6 +22,8 @@
     </AuthorizeView>
 
     <LoginDisplay />
+
+    <!-- Botón para alternar el modo daltonico -->
     <button @onclick="ToggleColorBlindMode" class="btn-toggle">
         @if (isDaltonicMode)
         {
@@ -35,10 +39,13 @@
 <div class="content">
     @Body
 </div>
+
 @code {
     bool isDaltonicMode = false;
+    
     void ToggleColorBlindMode()
     {
+        // Controlador para el modo daltonico
         isDaltonicMode = !isDaltonicMode;
 
         // Aplicar o quitar la clase 'daltonic' en el body
@@ -51,5 +58,4 @@
             JS.InvokeVoidAsync("document.body.classList.remove", "daltonic");
         }
     }
-}
 }

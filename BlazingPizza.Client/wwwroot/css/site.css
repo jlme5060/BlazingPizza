@@ -1,4 +1,4 @@
-﻿@import url('font/quicksand.css');
+﻿import url('font/quicksand.css');
 
 body, html {
     height: 100%;
@@ -56,6 +56,7 @@ form {
     overflow-y: auto;
     background: linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 80%);
     padding: 1.5rem !important;
+    text-align: center;
 }
 
 .nav-tab {
@@ -743,42 +744,116 @@ input[type=range] {
         right: 0.75rem;
         top: 0.5rem;
     }
-
-@keyframes progressbar-slide {
-    0% {
-        transform: translateX(-200px);
-    }
-
-    70% {
-        transform: translateX(500px);
-    }
-
-    100% {
-        transform: translateX(500px);
-    }
+/* CSS de sobre nosotros */
+.history-image {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 10px;
 }
+
+.team-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+
+.team-member {
+    text-align: center;
+    background:gray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+}
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid #d84315;
+    }
+h1, h2 {
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+p {
+    color: black;
+    text-align: center;
+}
+.texto {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+
+    @keyframes progressbar-slide {
+        0% {
+            transform: translateX(-200px);
+        }
+
+        70% {
+            transform: translateX(500px);
+        }
+
+        100% {
+            transform: translateX(500px);
+        }
+    }
+/* CSS para modo daltónico */
+body.daltonic .top-bar {
+    background: gray !important;
+}
+body.daltonic .content {
+    background: white !important;
+}
+
+/* CSS de botones */
 button {
-    background-color: gray;
+    background-color: #4CAF50; /* Se mantiene el color verde */
     border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    border-radius: 5px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-left: 10px;
+    transition: all 0.3s ease;
+    margin-left: 30px;
     margin-right: 10px;
 }
-.daltonic .content{
-    background-color: white;
-}
-.daltonic .top-bar {
-    background-color: gray;
+
+button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
+.btn-fixed-bottom-left {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 18px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+/* Estilos generales */
 h1, h2 {
     color: black;
-    text-align: center
+    text-align: center;
 }
 
 .history-image {
@@ -794,23 +869,25 @@ h1, h2 {
     justify-content: center;
     gap: 30px;
     margin-top: 70px;
-    margin-bottom:150px;
+    margin-bottom: 150px;
 }
 
 .team-member {
     text-align: center;
-    background:gray;
+    background: gray;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     max-width: 250px;
 }
-    .team-member img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        border: 4px solid #d84315;
-    }
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #d84315;
+}
+
 .texto {
     margin-left: 70px;
     margin-right: 70px;
